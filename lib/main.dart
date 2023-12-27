@@ -75,7 +75,14 @@ class HomeScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => VisualizarHorariosScreen()),
+                    MaterialPageRoute(
+                      builder: (context) => HorariosScreen(
+                        nomeCliente: 'Exemplo Nome',
+                        observacoesCliente: 'Exemplo Observações',
+                        dataSelecionada: DateTime.now(),
+                        horarioSelecionado: TimeOfDay.now(),
+                      ),
+                    ),
                   );
                 },
                 child: Padding(
@@ -86,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                       Icon(
                         Icons.schedule,
                         size: 50.0,
-                        color: Colors.pink[300], // Rosa mais intenso
+                        color: Colors.pink[300],
                       ),
                       SizedBox(height: 10.0),
                       Text(
@@ -94,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
-                          color: Colors.pink[300], // Rosa mais intenso
+                          color: Colors.pink[300],
                         ),
                       ),
                     ],
@@ -102,6 +109,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
+
 
             // Espaçamento entre os cards
             SizedBox(height: 20.0),
